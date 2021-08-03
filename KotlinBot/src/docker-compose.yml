@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  mongo:
+    # build the image from Dockerfile
+    build:
+      context: ./mongo
+      # bind mount volume for MongoDB documents
+    volumes:
+      - ./mongo-data:/data/db
+    ports:
+      - "27017:27017"
